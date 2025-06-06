@@ -84,7 +84,6 @@ header::before{
 }
 
 .logo{
-    filter: brightness(0) invert(1);
     width: 100%;
     height: 100%;
     object-fit: contain;
@@ -219,6 +218,7 @@ a.active {
     text-decoration: none;
     cursor: pointer;
 }
+
 
 @keyframes opacity {
     0% {
@@ -707,7 +707,6 @@ footer .brand p {
 @media  screen and (max-width: 790px) {
   
   .logo{
-    filter: brightness(0) invert(1);
     width: 100%;
     height: 100%;
     object-fit: contain;
@@ -716,10 +715,19 @@ footer .brand p {
 }
 
 .southwest {
-    font-size: clamp(.5rem, 5vw, 2rem);
+    font-size: clamp(.4rem, 4vw, 2rem);
     color: white;
     font-weight: 400;
     margin-left: -40px;
+}
+
+.search {
+  position: relative;
+  left: 30px;
+}
+
+.search svg {
+    height: 20px;
 }
   nav {
     display: none;

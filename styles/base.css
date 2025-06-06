@@ -6,7 +6,7 @@
     --text-main: #2E2E2E;
     --text-muted: #6C757D;
     --border: #DADADA;
-    --highlight: #0b8199;
+    --highlight: #0da8c7;
     --darker-highlight: #054855;
 
     --darkBackground: #1F1F1F;
@@ -64,7 +64,7 @@ header::before{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 100px;
+    height: 80px;
     left: 0;
     right: 0;
     margin: 0 auto;
@@ -88,13 +88,14 @@ header::before{
     width: 100%;
     height: 100%;
     object-fit: contain;
-    padding-bottom: .5rem;
+    padding-bottom: .2rem;
 }
 
 .southwest {
     font-size: clamp(.5rem, 5vw, 2rem);
     color: white;
     font-weight: 400;
+    margin-left: 20px;
 }
 
 #navigationAndLabelContainer {
@@ -155,7 +156,7 @@ a.active {
     color:white;
     font-size: calc(100% / 1.1);
     font-weight: 500;
-    border: 2px solid #ffffff;
+    border: 2px solid var(--highlight);
     border-radius: 40px;
 }
 
@@ -189,7 +190,7 @@ a.active {
     color: var(--highlight);
     font-size: clamp(.5rem, 3vw, 2rem);
     font-weight: 200;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-family: "Afacad Flux", serif;
     font-style: italic;
     letter-spacing: -1px;
 }
@@ -705,6 +706,21 @@ footer .brand p {
 
 @media  screen and (max-width: 790px) {
   
+  .logo{
+    filter: brightness(0) invert(1);
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    padding-bottom: .2rem;
+    margin-left: -50px;
+}
+
+.southwest {
+    font-size: clamp(.5rem, 5vw, 2rem);
+    color: white;
+    font-weight: 400;
+    margin-left: -40px;
+}
   nav {
     display: none;
     flex-direction: column-reverse;

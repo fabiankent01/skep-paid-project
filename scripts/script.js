@@ -39,7 +39,7 @@ ms.addEventListener('click', (event) => {
         navContainer.querySelector('#logo').style.transform = '';
         navContainer.querySelector('#logo').style.transition = 'all .2s ease-in-out';
     } else {
-      navContainer.style.backgroundColor = 'rgba(0, 0, 0, 0.976)';
+      navContainer.style.backgroundColor = '#054855';
       navContainer.querySelector('#logo').style.marginLeft = '10px';
       navContainer.querySelector('#logo').style.transform = 'scale(.9)';
       navContainer.querySelector('#logo').style.transition = 'all .2s ease-in-out';
@@ -59,7 +59,7 @@ window.addEventListener('scroll', () => {
   const measure = header.offsetHeight - navContainer.offsetHeight;
 
   if (navContainer.offsetHeight >= heroBottom && window.scrollY >= measure) {
-    navContainer.style.backgroundColor = 'rgba(0, 0, 0, 0.976)';
+    navContainer.style.backgroundColor = '#054855';
     navContainer.querySelector('#logo').style.marginLeft = '10px';
     navContainer.querySelector('#logo').style.transform = 'scale(.9)';
     navContainer.querySelector('#logo').style.transition = 'marginLeft transform .5s ease-in-out';

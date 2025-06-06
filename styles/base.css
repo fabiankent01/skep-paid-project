@@ -1,13 +1,13 @@
 :root {
-    --secondary: #6A994E;
-    --secondaryDarker: #4d6d3a;
-    --background: #FFF8F0;
+    --secondary: #0D3B66;
+    --secondaryDarker: #051a2e;
+    --background: #f0fdff;
     --card-bg: #ffffff;
     --text-main: #2E2E2E;
     --text-muted: #6C757D;
     --border: #DADADA;
-    --highlight: #ff9100;
-    --darker-highlight: #ff4d00;
+    --highlight: #0b8199;
+    --darker-highlight: #054855;
 
     --darkBackground: #1F1F1F;
     --dark-card-bg: #2A2A2A;
@@ -33,8 +33,8 @@ header {
     position: relative;
     width: 100%;
     height: 100dvh;
-    background-color: rgba(0, 0, 0, .5);
-    background-image: linear-gradient(to bottom,rgba(0,0,0,1) 0,rgba(0,0,0,0) 100%);
+    background-color: rgba(5, 26, 46, 0.5);
+    background-image: linear-gradient(to bottom,var(--darker-highlight) 0,rgba(0,0,0,0) 100%);
 }
 header.favoriteHeader {
   height: 70dvh;
@@ -58,18 +58,6 @@ header::before{
   background-size: cover;
   background-position: center center;
 }
-header.homeHeader::before {
-  background-image: url('../images/food8.webp');
-}
-header.recipeHeader::before {
-  background-image: url('../images/recipe1.webp');
-}
-header.favoriteHeader::before {
-  background-image: url('../images/fav2.webp')
-}
-header.thanksHeader::before {
-  background-image: none;
-}
 
 #logoAndNavigationContainer {
     position: fixed;
@@ -83,13 +71,6 @@ header.thanksHeader::before {
     width: 100%; 
     padding: 0 2rem;
     z-index: 10;
-}
-.thanksHeader #logoAndNavigationContainer {
-  background-color: var(--darkBackground);
-  padding: 0 1rem;
-  /* all: unset; */
-  height: 100px;
-  position: relative;
 }
 
 #logo {
@@ -110,7 +91,7 @@ header.thanksHeader::before {
     padding-bottom: .5rem;
 }
 
-.dishdash {
+.southwest {
     font-size: clamp(.5rem, 5vw, 2rem);
     color: white;
     font-weight: 400;
@@ -171,9 +152,10 @@ nav {
 }
 
 a.active {
-    color:var(--highlight) ;
-    font-size: calc(100% / 1.2);
-    border: 2px solid #ff9100;
+    color:white;
+    font-size: calc(100% / 1.1);
+    font-weight: 500;
+    border: 2px solid #ffffff;
     border-radius: 40px;
 }
 
@@ -228,8 +210,8 @@ a.active {
     left: 0;
     width: 100%;
     text-align: center;
-    font-size: clamp(.5rem, .7rem, 1rem);
-    font-weight: lighter;
+    font-size: clamp(.5rem, .9rem, 1rem);
+    font-weight: 400;
     color: #fff;
     text-shadow: 0 0 5px rgba(0,0,0,0.75);
     animation: opacity 1s linear forwards;
@@ -299,10 +281,7 @@ a.active {
     border-radius: 30px 0 0 30px;
     text-indent: 20px;
 }
-.recipeSearchBox input {
-  border: 1px solid var(--dark-text-muted);
-  border-right: none;
-}
+
 .searchContainer input::placeholder {
     position: relative;
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
@@ -324,11 +303,7 @@ a.active {
     cursor: pointer;
     border-radius: 0 30px 30px 0;
 }
-.recipeSearchBox .search-icon  {
-  background-color: var(--highlight);
-  border: 1px solid var(--dark-text-muted);
-  border-right: none;
-}
+
 .search-icon svg {
     height: 20px;
     fill: black;
@@ -340,7 +315,6 @@ a.active {
 .close {
     cursor: pointer;
 }
-
 
 .close svg{
     display: block;
@@ -398,29 +372,22 @@ a.active {
   }
   
   .cta-button {
-    display: inline-block;
-    background-color: var(--highlight);
-    color:  black;
     margin-top: 2rem;
     padding: 0.75rem 1.5rem;
     border-radius: 3px;
     text-decoration: none;
-    font-family: "roboto";
     font-weight: 350;
     transition: background-color 0.3s ease;
   }
-  
-  .cta-button:hover {
-    background-color: #fea32b;
-  }
 
-/* FEATURED RECIPE SECTION */
-  .featured-recipes {
+
+/* FEATURED PROJECTS SECTION */
+  .featured-projects {
     margin: 3rem auto;
     height: auto;
   }
   
-  .featured-recipes h2,
+  .featured-projects h2,
   .testimonials h2,
   .location-map h2,
   .address h2 {
@@ -429,102 +396,109 @@ a.active {
     color: var(--text-main);
     margin-bottom: 2rem;
   }
+ 
   
- .recipe-card {
-    display: flex;
-    width: 100%;
-    max-width: 1500px;
-    height: 350px;
-    margin: 0 auto;
-  }
 
-  .recipe-card > * {
-    flex: 1;
-  }
 
-  .imgContainer {
-    position: relative;
-    box-sizing: border-box;
-    height: 100%;
-    overflow: hidden;
-
-  }
-
-  .imgContainer::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 1;
-  }
-
-  .recipe-card img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-  
-  .recipeContainer {
-    background-color: #71d53726;
-    text-align: left;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-
-  .recipe-info {
-    margin: 3rem;
-  }
-  
-  .recipe-info h3 {
-    font-size: clamp(.5rem, 1rem, 1.5rem);
-    color: var(--primary);
-    margin-bottom: 0.5rem;
-  }
-
-  .mealType {
-    color: #ff4000 !important;
-    font-size: calc(100% + .3em) !important;
-    font-weight: 700;
-  }
-  
-  .recipe-info p {
-    font-size: clamp(.5rem, .8rem, 1rem);
-    /* color: var(--text-muted); */
-    color: var(--dark-border);
-    margin-bottom: 1rem;
-    line-height: 1;
-  }
-
-  .right-image .recipe-info {
-    text-align: right;
-  }
-  
-  .view-recipe-btn {
-    display: inline-block;
-    /* background-color: #45603e; */
-    background-color: var(--secondaryDarker);
-    color: white;
-    padding: 0.5rem 1rem;
-    border-radius: 8px;
-    text-decoration: none;
-    font-size: clamp(7pt, 14pt, 15pt);
-    font-weight: bold;
-    transition: background-color 0.3s ease;
-    cursor: pointer;
-  }
-  
-  .view-recipe-btn:hover {
-    background-color: #7bb15e;
-  }
+.featured-projects {
+  padding: 40px 40px;
+  background-color: #f7f7f7;
+  max-width: 100%;
+  margin: auto;
+}
 
 
 
+.project-card {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  margin-bottom: 40px;
+  background-color: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+  transition: transform 0.4s ease, box-shadow 0.4s ease, opacity 0.5s ease;
+  opacity: 0;
+  transform: translateY(30px);
+  flex-wrap: nowrap;
+}
 
-  .testimonials {
+.project-card.reverse {
+  flex-direction: row-reverse;
+}
+
+.project-card:hover {
+  transform: translateY(0) scale(1.02);
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
+  z-index: 2;
+}
+
+.project-card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.project-image {
+  width: 50%;
+  min-height: 300px;
+}
+
+.project-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.project-card:hover .project-image img {
+  transform: scale(1.05);
+}
+
+.project-content {
+  width: 50%;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.project-content h3 {
+  margin-top: 0;
+  color: var(--secondary);
+}
+
+.project-content p {
+  margin: 10px 0;
+  color: #555;
+}
+
+.see-more-container {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.cta-button,
+.see-more-button {
+  display: inline-block;
+  padding: 12px 24px;
+  background-color: var(--highlight);
+  color: #fff;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.cta-button:hover,
+.see-more-button:hover {
+  background-color: var(--darker-highlight);
+}
+
+
+
+
+.testimonials {
     background: #fff;
     padding: 60px 20px;
 }
@@ -547,7 +521,7 @@ a.active {
     text-align: center;
     margin-top: 10px;
     font-weight: bold;
-    color: #2e7d32;
+    color: var(--darker-highlight);
 }
 
 
@@ -578,8 +552,13 @@ a.active {
     border-radius: 12px;
     overflow: hidden;
     box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(128, 128, 128, 0.253);
+
 }
 
+.map-container iframe {
+    width: 100%;
+}
 /* Address Section */
 .address {
     margin-top: 20px;
@@ -663,7 +642,7 @@ footer .brand a {
   text-decoration: none;
 }
 footer .brand p {
-  color: #fea32b;
+  color: var(--dark-text-main);
 }
 
 .footer-col:not(:first-of-type) h5 {
@@ -781,6 +760,23 @@ footer .brand p {
         transform: translateY(-170%);
     }
   }
+
+
+
+  .project-card,
+  .project-card.reverse {
+    flex-direction: column;
+  }
+
+  .project-image,
+  .project-content {
+    width: 100%;
+  }
+
+  .project-image {
+    min-height: 200px;
+  }
+
 
 
   .footer-grid {

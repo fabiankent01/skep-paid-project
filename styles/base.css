@@ -711,14 +711,14 @@ footer .brand p {
     height: 100%;
     object-fit: contain;
     padding-bottom: .2rem;
-    margin-left: -50px;
+    margin-left: -30px;
 }
 
 .southwest {
     font-size: clamp(.4rem, 4vw, 2rem);
     color: white;
     font-weight: 400;
-    margin-left: -40px;
+    margin-left: -20px;
 }
 
 .search {
